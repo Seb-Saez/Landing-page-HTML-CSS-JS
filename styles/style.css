@@ -1,0 +1,133 @@
+/* 
+modificar clases (con el punto y nombre de clase)
+
+.nav-container{                                          
+    background-color: rgb(255, 179, 0) !important;
+    min-height: 20%;
+    background-color: rgb(0, 13, 255);
+
+}
+
+
+modificar etiquetas (directamente el nombre de la etiqueta)
+
+h1 {
+    color: brown;
+
+} */
+
+/*Normalizar las medidas y bordes no borrar*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* Definir las variables de color */
+:root {
+    --color-principal: #226986; /* Verde principal */
+    --color-secundario: #328e92; /* Amarillo */
+    --color-fondo: #efedd6; /* Fondo claro */
+    --color-texto: #333; /* Texto oscuro */
+    --color-sombra: rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo general del body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor del encabezado hero */
+.hero-container {
+    text-align: center;
+    padding: 50px;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.hero-container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.hero-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero-container img {
+    width: 200px;
+    height: auto;
+    border-radius: 35%;
+}
+
+/* Contenedor de las tarjetas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.equipo{
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo de cada tarjeta */
+.tarjeta {
+    background-color: white;
+    width: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px); /* Efecto hover: eleva la tarjeta */
+}
+
+.tarjeta-imagen {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tarjeta-nombre {
+    font-size: 1.5em;
+    color: var(--color-principal);
+    margin: 15px 0 10px;
+}
+
+.tarjeta-descripcion {
+    font-size: 1em;
+    color: var(--color-texto);
+    margin-bottom: 15px;
+}
+
+/* Estilo del pie de página */
+.footer-container {
+    background-color: var(--color-secundario);
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.footer-container a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.6em;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
