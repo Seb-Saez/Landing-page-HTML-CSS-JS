@@ -71,7 +71,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
-    padding: 20px;
+    padding: 20px;   
 }
 
 .equipo{
@@ -88,7 +88,7 @@ body {
     box-shadow: 0 4px 10px var(--color-sombra);
     text-align: center;
     padding: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease;   
 }
 
 .tarjeta:hover {
@@ -131,3 +131,243 @@ body {
 .footer-container a:hover {
     text-decoration: underline;
 }
+
+/* Estilo para el menú superior */
+.top-menu {
+    background-color: #328e92;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el menú esté sobre el contenido */
+    height: 40px;
+}
+
+.top-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.top-menu ul li {
+    display: inline-block;
+}
+
+.top-menu ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.top-menu ul li a:hover {
+    background-color: #226986;
+}
+
+.top-menu ul li a {
+    font-weight: bold; /* Hace que todo el texto del menú esté en negrita */
+}
+
+.top-menu ul li a {
+    font-size: 20px; /* Ajusta el tamaño según lo necesites */
+}
+
+
+/* Ajuste de la página para que el contenido no se superponga al menú */
+body {
+    margin: 0;
+    padding-top: 0px; /* Espacio debajo del menú */
+}
+
+.hero-container {
+    text-align: center;
+}
+
+.card-container {
+    margin-top: 20px;
+}
+
+.reasons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo para cada tarjeta de persona */
+.reason-card {
+    background-color: white;
+    width: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.reason-card:hover {
+    transform: translateY(-10px); /* Efecto hover: eleva la tarjeta */
+}
+
+.reason-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.reason-text {
+    margin-top: 10px;
+}
+
+.reason-text h3 {
+    font-size: 1.5em;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+.reason-text p {
+    font-size: 1em;
+    color: var(--color-texto);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.goal-container {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--color-fondo);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.goal-container h2 {
+    font-size: 2.5em;
+    color: var(--color-principal);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilo del cuadro de texto */
+.goal-box {
+    background-color: white; /* Fondo blanco para resaltar */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px auto;
+    border-left: 8px solid var(--color-principal); /* Borde decorativo en la izquierda */
+    text-align: justify;
+}
+
+.goal-box p {
+    font-size: 1.2em;
+    color: var(--color-texto);
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Estilo de los iconos */
+.goal-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 3em;
+    color: var(--color-principal);
+    margin-top: 20px;
+}
+.goal-icons i {
+    transition: transform 0.3s ease;
+}
+.goal-icons i:hover {
+    transform: translateY(-10px);
+}
+
+.titulo-seccion {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.contact-form {
+    background-color: var(--color-fondo);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.contact-form h2 {
+    color: var(--color-principal);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 1.2em;
+    color: var(--color-texto);
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid var(--color-secundario);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--color-secundario);
+}
+
+.contact-info {
+    text-align: center;
+    background-color: var(--color-secundario);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.contact-info h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+
