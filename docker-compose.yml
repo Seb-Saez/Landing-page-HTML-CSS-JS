@@ -1,0 +1,10 @@
+services:
+  mylanding:
+      build: ./php
+      volumes:
+        - ./codigo:/var/www/html
+      ports:
+        - "8080:80"
+  # volumes:
+  #   db.data
+
