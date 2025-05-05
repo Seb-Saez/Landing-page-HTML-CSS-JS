@@ -387,3 +387,52 @@ body {
     color: black;
 }
 
+
+
+.login-container {
+    background-color: white;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    text-align: center;
+}
+
+.login-titulo {
+    color: var(--color-principal);
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.login-label {
+    display: block;
+    text-align: left;
+    font-size: 1.1em;
+    color: var(--color-texto);
+    margin-bottom: 5px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--color-secundario);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.login-boton {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-boton:hover {
+    background-color: var(--color-secundario);
+}

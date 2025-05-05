@@ -15,16 +15,19 @@ services:
       - mysql
 
   mysql:
-    image: mysql:8
+    build: 
+      context: ./DB
+    #restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: flaskdb
       MYSQL_USER: usuario
       MYSQL_PASSWORD: clave
-    volumes:
-      - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
 
-volumes:
+volumes:  
+  nginx_data:
   mysql_data:

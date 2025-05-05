@@ -1,14 +1,16 @@
-from flask import Flask, request, jsonify
-import mysql.connector
+from flask import Flask, request, jsonify # type: ignore
+import mysql.connector # type: ignore
+from flask_cors import CORS # type: ignore
 
 app = Flask(__name__)
+CORS(app)
 
 # Conexión a la base de datos MySQL
 db = mysql.connector.connect(
-    host="mysql",
-    user="usuario",
-    password="clave",
-    database="flaskdb"
+    host="mysql",  # Nombre del contenedor de MySQL en docker-compose
+    user="usuario",  # Usuario definido en docker-compose
+    password="clave",  # Contraseña definida en docker-compose
+    database="flaskdb"  # Nombre de la base de datos
 )
 
 @app.route('/login', methods=['POST'])
