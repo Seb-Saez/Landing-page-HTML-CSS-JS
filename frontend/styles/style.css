@@ -1,438 +1,159 @@
-/* 
-modificar clases (con el punto y nombre de clase)
-
-.nav-container{                                          
-    background-color: rgb(255, 179, 0) !important;
-    min-height: 20%;
-    background-color: rgb(0, 13, 255);
-
-}
-
-
-modificar etiquetas (directamente el nombre de la etiqueta)
-
-h1 {
-    color: brown;
-
-} */
-
-/*Normalizar las medidas y bordes no borrar*/
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Definir las variables de color */
+/* === Variables de color === */
 :root {
-    --color-principal: #226986; /* Verde principal */
-    --color-secundario: #328e92; /* Amarillo */
-    --color-fondo: #efedd6; /* Fondo claro */
-    --color-texto: #333; /* Texto oscuro */
-    --color-sombra: rgba(0, 0, 0, 0.1); /* Sombra suave */
+  --color-primario: #2c3e50;
+  --color-secundario: #3498db;
+  --color-fondo: #f4f6f8;
+  --color-texto: #333;
+  --color-boton: #2980b9;
+  --color-boton-hover: #1f618d;
+  --color-footer: #2c3e50;
+  --color-footer-texto: #ecf0f1;
 }
 
-/* Estilo general del body */
+/* === Estilos globales === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--color-fondo);
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Contenedor del encabezado hero */
-.hero-container {
-    text-align: center;
-    padding: 50px;
-    background-color: var(--color-principal);
-    color: white;
+main, .hero-container {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hero-container h1 {
-    margin-bottom: 20px;
-    font-size: 2.5em;
+/* === Navegación === */
+nav.top-menu {
+  background-color: var(--color-primario);
+  padding: 1rem 2rem;
 }
 
-.hero-container p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+nav.top-menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.hero-container img {
-    width: 200px;
-    height: auto;
-    border-radius: 35%;
+nav.top-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Contenedor de las tarjetas */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 20px;   
+nav.top-menu a:hover {
+  color: var(--color-secundario);
 }
 
-.equipo{
-    text-align: center;
-    padding: 20px;
+/* === Formularios === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem 0;
 }
 
-/* Estilo de cada tarjeta */
-.tarjeta {
-    background-color: white;
-    width: 250px;
-    min-height: 500px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px var(--color-sombra);
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease;   
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+input, textarea, button {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.tarjeta:hover {
-    transform: translateY(-10px); /* Efecto hover: eleva la tarjeta */
+button {
+  background-color: var(--color-boton);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.tarjeta-imagen {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
+button:hover {
+  background-color: var(--color-boton-hover);
 }
 
-.tarjeta-nombre {
-    font-size: 1.5em;
-    color: var(--color-principal);
-    margin: 15px 0 10px;
-}
-
-.tarjeta-descripcion {
-    font-size: 1em;
-    color: var(--color-texto);
-    margin-bottom: 15px;
-}
-
-/* Estilo del pie de página */
-.footer-container {
-    background-color: var(--color-secundario);
-    color: white;
-    text-align: center;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    
-}
-
-.footer-container a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.6em;
-}
-
-.footer-container a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo para el menú superior */
-.top-menu {
-    background-color: #328e92;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Asegura que el menú esté sobre el contenido */
-    height: 40px;
-}
-
-.top-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.top-menu ul li {
-    display: inline-block;
-}
-
-.top-menu ul li a {
-    color: black;
-    text-decoration: none;
-    padding: 15px 20px;
-    display: inline-block;
-    font-size: 18px;
-}
-
-.top-menu ul li a:hover {
-    background-color: #226986;
-}
-
-.top-menu ul li a {
-    font-weight: bold; /* Hace que todo el texto del menú esté en negrita */
-}
-
-.top-menu ul li a {
-    font-size: 20px; /* Ajusta el tamaño según lo necesites */
-}
-
-
-/* Ajuste de la página para que el contenido no se superponga al menú */
-body {
-    margin: 0;
-    padding-top: 0px; /* Espacio debajo del menú */
+/* === Secciones === */
+h1, h2 {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
 }
 
 .hero-container {
-    text-align: center;
+  padding: 2rem;
+  text-align: center;
 }
 
-.card-container {
-    margin-top: 20px;
+.reasons-container, .goal-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.reasons-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Estilo para cada tarjeta de persona */
+/* === Tarjetas de razones === */
 .reason-card {
-    background-color: white;
-    width: 250px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px var(--color-sombra);
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease;
-}
-
-.reason-card:hover {
-    transform: translateY(-10px); /* Efecto hover: eleva la tarjeta */
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .reason-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.reason-text {
-    margin-top: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 .reason-text h3 {
-    font-size: 1.5em;
-    color: var(--color-principal);
-    margin-bottom: 10px;
+  margin-bottom: 0.5rem;
+  color: var(--color-primario);
 }
 
-.reason-text p {
-    font-size: 1em;
-    color: var(--color-texto);
-    line-height: 1.5;
-    margin-bottom: 15px;
+/* === Footer === */
+.footer-container {
+  background-color: var(--color-footer);
+  color: var(--color-footer-texto);
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
 }
 
-.goal-container {
-    text-align: center;
-    padding: 40px;
-    background-color: var(--color-fondo);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.footer-container a {
+  color: var(--color-footer-texto);
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.goal-container h2 {
-    font-size: 2.5em;
-    color: var(--color-principal);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.footer-container a:hover {
+  color: var(--color-secundario);
 }
 
-/* Estilo del cuadro de texto */
-.goal-box {
-    background-color: white; /* Fondo blanco para resaltar */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
-    margin: 20px auto;
-    border-left: 8px solid var(--color-principal); /* Borde decorativo en la izquierda */
-    text-align: justify;
-}
-
-.goal-box p {
-    font-size: 1.2em;
-    color: var(--color-texto);
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-/* Estilo de los iconos */
+/* === Íconos de metas === */
 .goal-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-size: 3em;
-    color: var(--color-principal);
-    margin-top: 20px;
-}
-.goal-icons i {
-    transition: transform 0.3s ease;
-}
-.goal-icons i:hover {
-    transform: translateY(-10px);
-}
-
-.titulo-seccion {
-    font-size: 2.5em;
-    color: white;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.contact-form {
-    background-color: var(--color-fondo);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px var(--color-sombra);
-    max-width: 600px;
-    margin: 40px auto;
-    text-align: center;
-}
-
-.contact-form h2 {
-    color: var(--color-principal);
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    font-size: 1.2em;
-    color: var(--color-texto);
-    text-align: left;
-    margin-bottom: 5px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid var(--color-secundario);
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact-form button {
-    background-color: var(--color-principal);
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: var(--color-secundario);
-}
-
-.contact-info {
-    text-align: center;
-    background-color: var(--color-secundario);
-    padding: 30px;
-    border-radius: 10px;
-    color: white;
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-.contact-info h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-.contact-info p {
-    font-size: 1.2em;
-    margin: 5px 0;
-}
-
-
-.boton-seb{
-    width: 100px;
-    height: 50px;
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    background-color: white;
-    color: black;
-}
-
-
-
-.login-container {
-    background-color: white;
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px var(--color-sombra);
-    text-align: center;
-}
-
-.login-titulo {
-    color: var(--color-principal);
-    margin-bottom: 30px;
-    font-size: 2em;
-}
-
-.login-label {
-    display: block;
-    text-align: left;
-    font-size: 1.1em;
-    color: var(--color-texto);
-    margin-bottom: 5px;
-}
-
-.login-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid var(--color-secundario);
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.login-boton {
-    background-color: var(--color-principal);
-    color: white;
-    padding: 12px 20px;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.login-boton:hover {
-    background-color: var(--color-secundario);
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: var(--color-primario);
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
 }
