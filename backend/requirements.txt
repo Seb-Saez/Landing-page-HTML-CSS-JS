@@ -1,3 +1,6 @@
-flask
-mysql-connector-python
+# para hacer el backend
+Flask
+# cors para que el backend acepte request desde el front desde otro puerto
 flask-cors
+# PAra la bbdd
+mysql-connector-python

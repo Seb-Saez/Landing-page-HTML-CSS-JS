@@ -1,20 +1,20 @@
-# Usamos Python 3.10 slim como base
+# Imagen base oficial de Python
 FROM python:3.10-slim
 
-# Establecemos el directorio de trabajo
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copiamos el archivo de dependencias primero para aprovechar la cache de Docker
-COPY requirements.txt /app/requirements.txt
+# Copia solo requirements primero para aprovechar el cache de Docker
+COPY requirements.txt ./
 
-# Instalamos las dependencias necesarias
+# Instala las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiamos el resto de los archivos del backend al contenedor
-COPY . /app
+# Copia el resto del código al contenedor
+COPY . .
 
-# Exponemos el puerto 5000
+# Expone el puerto donde correrá Flask
 EXPOSE 5000
 
-# Comando para ejecutar la app Flask
+# Comando para ejecutar la aplicación Flask
 CMD ["python", "app.py"]

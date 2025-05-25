@@ -1,33 +1,38 @@
-version: '3.9'
+version: '3.8'
+
 services:
   frontend:
-    image: nginx:alpine
-    volumes:
-      - ./frontend:/usr/share/nginx/html
+    build: ./frontend
     ports:
       - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - red_app
 
   backend:
     build: ./backend
     ports:
       - "5000:5000"
     depends_on:
-      - mysql
+      - db
+    networks:
+      - red_app
 
-  mysql:
-    build: 
-      context: ./DB
-    #restart: always
+  db:
+    image: mysql:8.0
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: flaskdb
-      MYSQL_USER: usuario
-      MYSQL_PASSWORD: clave
-    ports:
-      - "3306:3306"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: usuariosdb
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - red_app
 
-volumes:  
-  nginx_data:
+volumes:
   mysql_data:
+
+networks:
+  red_app:

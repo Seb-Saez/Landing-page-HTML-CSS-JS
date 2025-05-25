@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('loginForm');
+  const form = document.getElementById('registerForm');
   const message = document.getElementById('message');
 
   form.addEventListener('submit', async function (e) {
@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('password').value;
 
     try {
-      const response = await fetch('/api/login', {  // <-- CAMBIO AQUÍ
+      const response = await fetch('/api/register', {  // <-- CAMBIO AQUÍ
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
       });
 
